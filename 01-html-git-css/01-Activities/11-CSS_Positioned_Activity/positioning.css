@@ -1,0 +1,42 @@
+p {
+    width: 80%;
+    margin: auto;
+}
+
+#fixedDiv {
+    background-color: yellow;
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    text-align: center;
+    z-index: 2;
+}
+
+#container {
+    overflow: auto;
+    clear: both;
+    margin: auto;
+    width: 80%;
+    height: 400px;
+    position: relative;
+    text-align: center;
+  }
+
+#relativeDiv {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    background-color: green;
+}
+  
+#absoluteDiv {
+    background-color: red;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    text-align: center;
+}
