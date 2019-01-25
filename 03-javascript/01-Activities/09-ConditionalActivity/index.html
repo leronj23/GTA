@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional Demo</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+
+        // Here we create our prompt and confirm variables which will store user input.
+        var confirmSteak = confirm("Do you eat steak?");
+        
+        
+        if (confirmSteak) {
+
+            document.write("Here’s a Steak Sandwich!");
+        }
+        else {
+
+            document.write("Here’s a Tofu Stir-Fry!");
+        }
+
+        var age = prompt("How old are you?");
+        var integer = parseInt(age, 10);
+        if (integer < 21) {
+
+            document.write("No Steak for you!");
+        }
+
+        
+
+    </script>
+
+</body>
+
+</html>

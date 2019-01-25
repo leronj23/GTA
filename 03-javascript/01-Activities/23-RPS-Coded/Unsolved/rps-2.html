@@ -33,7 +33,32 @@
       // Alerts the Computer's guess.
       alert("Computer guess: " + computerGuess);
 
-    };
+
+      if(userGuess == computerChoices){
+        // tie
+
+      } else if(userGuess=="r" && computerGuess == "p") {
+
+        // computer win
+      }
+      else if(userGuess=="r" && computerChoices == "s"){
+        // user win
+      }
+      else if(userGuess=="p" && computerChoices =="r"){
+        // user wins
+      }
+      else if ( userGuess=="p" && computerChoices == "s"){
+        // computer wins
+      }
+      else if( userGuess =="s" && computerChoices == "r"){
+
+        // computer wins
+      }
+      else if (userGuess=="s" && computerChoices == "p"){
+        // user wins
+      }
+
+  };
   </script>
 
 </body>

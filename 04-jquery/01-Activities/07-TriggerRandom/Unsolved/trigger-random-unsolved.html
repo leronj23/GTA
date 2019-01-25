@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Trigger Random</title>
-  
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Added link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -12,6 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 </head>
+
 <body>
 
   <div class="jumbotron">
@@ -21,8 +23,10 @@
     <div class="text-center">
 
       <!-- Here we have our button for generating random numbers (#random-button) -->
-      <button id="random-button" class="btn btn-primary btn-lg"><h1><span class="fa fa-question"></span></h1></button>
-      
+      <button id="random-button" class="btn btn-primary btn-lg">
+        <h1><span class="fa fa-question"></span></h1>
+      </button>
+
     </div>
 
   </div>
@@ -32,17 +36,30 @@
 
   <script type="text/javascript">
 
-    $(document).ready(function() {
+    $(document).ready(function () {
+
+      var min = 1;
+      var max = 1000;
 
       // CREATE THE MISSING CODE HERE. Your code should add content to the random-number div.
       // ...
 
+      $("#random-button").on("click", function () {
 
+        $("#random-button").html(randomIntFromInterval(min, max));
+
+      });
+
+      function randomIntFromInterval(min, max) // min and max included
+      {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+      }
       // ...
 
     });
 
   </script>
-  
+
 </body>
+
 </html>
