@@ -1,0 +1,22 @@
+<!-- 5. Output the animalType string, pet boolean, and fierceness number to the page for all the pets. -->
+{{#if isPet}}
+
+  {{#each animals}}
+    {{#if pet}}
+      <h1>{{animalType}}</h1>
+      <h2>{{pet}}</h2>
+      <h2>{{fierceness}}</h2>
+    {{/if}}
+  {{/each}}
+
+{{else}}
+
+  {{#each animals}}
+    {{#unless pet}}
+      <h1>{{animalType}}</h1>
+      <h2>{{pet}}</h2>
+      <h2>{{fierceness}}</h2>
+    {{/unless}}
+  {{/each}}
+
+{{/if}}
