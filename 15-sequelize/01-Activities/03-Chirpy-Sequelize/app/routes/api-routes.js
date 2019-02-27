@@ -22,7 +22,6 @@ module.exports = function(app) {
       // results are available to us inside the .then
       res.json(results);
     });
-
   });
 
   // Add a chirp
@@ -39,7 +38,5 @@ module.exports = function(app) {
       // `results` here would be the newly created chirp
       res.end();
     });
-
   });
-
 };

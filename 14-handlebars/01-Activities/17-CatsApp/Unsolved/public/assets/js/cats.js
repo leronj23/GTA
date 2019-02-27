@@ -42,4 +42,19 @@ $(function() {
       }
     );
   });
+
+  $(".delete-cat").on("click", function(event) {
+    var id = $(this).data("id");
+
+    // Send the POST request.
+    $.ajax("/api/cats/" + id, {
+      type: "DELETE",
+    }).then(
+      function() {
+        console.log("delete cat", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
 });
