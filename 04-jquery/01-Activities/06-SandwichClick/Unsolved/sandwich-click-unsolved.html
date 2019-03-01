@@ -19,22 +19,17 @@
 
   <script type="text/javascript">
 
-
-
     // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
     // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
     // It's useful to become familiar with now.
 
-    $(document).ready(function () {
+    $(document).ready(function() {
 
       // VARIABLES
       // ====================================================================
       // Here we create variables for tracking the number of sandwiches eaten
       // ...
 
-      var pbjCounter = 0;
-      var grilledcheeseCounter = 0;
-      var rbCounter = 0;
 
       // ...
 
@@ -44,32 +39,12 @@
       // Inside each click event is the code to create an alert, update the counter, then show the updated count.
       // ...
 
-      $("#pbj").on("click", function () {
-
-        pbjCounter++;
-
-        alert("You ate " +pbjCounter + " peanut butter and jelly sandwiches");
-      });
-
-      $("#grilledcheese").on("click", function () {
-
-        grilledcheeseCounter++;
-
-        alert("You ate " +grilledcheeseCounter + " delicious grilled cheese sandwiches");
-      });
-
-      $("#roastbeef").on("click", function () {
-
-        rbCounter++;
-
-        alert("You ate " +rbCounter + " nasty roastbeef sandwiches");
-      });
 
       // ...
 
     });
 
-  </script>
+</script>
 
 </body>
 

@@ -19,6 +19,5 @@ var nonessentials = {
 
 module.exports = {
   essentials: essentials,
-  niceToHaves: niceToHaves,
-  nonessentials: nonessentials
+  niceToHaves: niceToHaves
 };

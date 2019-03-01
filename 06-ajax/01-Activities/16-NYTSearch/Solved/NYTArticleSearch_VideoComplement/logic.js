@@ -75,11 +75,11 @@ function updatePage(NYTData) {
       console.log(headline.main);
       $articleListItem.append(
         "<span class='label label-primary'>" +
-        articleCount +
-        "</span>" +
-        "<strong> " +
-        headline.main +
-        "</strong>"
+          articleCount +
+          "</span>" +
+          "<strong> " +
+          headline.main +
+          "</strong>"
       );
     }
 
@@ -123,7 +123,7 @@ function clear() {
 // ==========================================================
 
 // .on("click") function associated with the Search Button
-$("#run-search").on("click", function (event) {
+$("#run-search").on("click", function(event) {
   // This line allows us to take advantage of the HTML "submit" property
   // This way we can hit enter on the keyboard and it registers the search
   // (in addition to clicks). Prevents the page from reloading on form submit.

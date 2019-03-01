@@ -13,12 +13,8 @@
   <!-- Text with spanID that gets filled with content -->
   <p>After clicking, go to the firebase database to see the click counter go up.</p>
   <p>
-    While clicking, put this html file to the left, and show the firebase database on the right to show how firebase is
-    real time!
+    While clicking, put this html file to the left, and show the firebase database on the right to show how firebase is real time!
   </p>
-
-  <!-- Display clickCounter vaule from database -->
-  <h1>What is my number: <span id="click-value"></span></h1>
 
   <!-- Button -->
   <button id="click-button">Click Me!!!!</button>
@@ -29,19 +25,17 @@
   <!-- ================================================================================== -->
 
   <!-- Firebase JavaScript Link -->
-  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
 
   <script>
     // Initialize Firebase
     // This is the code we copied and pasted from our app page
     var config = {
-      apiKey: "AIzaSyDweljNQoc83WRuxMyBe4OAUZMRfeJAkhg",
-      authDomain: "demotest-ec6a9.firebaseapp.com",
-      databaseURL: "https://demotest-ec6a9.firebaseio.com",
-      projectId: "demotest-ec6a9",
-      storageBucket: "demotest-ec6a9.appspot.com",
-      messagingSenderId: "715174768018"
+      apiKey: "AIzaSyAJS4YQWU5DmESeYueG1qH1NGkjv3DncEY",
+      authDomain: "fir-click-counter-7cdb9.firebaseapp.com",
+      databaseURL: "https://fir-click-counter-7cdb9.firebaseio.com",
+      storageBucket: "fir-click-counter-7cdb9.appspot.com"
     };
 
     firebase.initializeApp(config);
@@ -59,7 +53,7 @@
     // ================================================================================
 
     // On Click
-    $("#click-button").on("click", function () {
+    $("#click-button").on("click", function() {
 
       // Add 1 to clickCounter
       clickCounter++;
@@ -71,21 +65,6 @@
       database.ref().set({
         clickCount: clickCounter
       });
-
-      // on listen to the database to get a referrence
-      // value Read and listen for changes to the entire contents of a path.
-      // A snapshot is a picture of the data at a particular database reference at a single point in time
-      // val is used to get the data
-      database.ref().on("value", function(snapshot){
-        console.log(snapshot.val());
-
-        clickCounter = snapshot.val().clickCount;
-
-        $("#click-value").text(snapshot.val().clickCount);
-      }, function(errorObject) {
-          console.log(errorObject);
-        
-      })
 
       // Now! go to https://fir-click-counter-7cdb9.firebaseio.com/ to see the impact to the DB
     });

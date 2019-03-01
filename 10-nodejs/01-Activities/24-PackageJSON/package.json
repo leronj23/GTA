@@ -14,8 +14,6 @@
   "author": "Ahmed Haque",
   "license": "ISC",
   "dependencies": {
-    "geocoder": "^0.2.3",
-    "node-geocoder": "^3.22.0",
     "weather-js": "^2.0.0"
   }
 }

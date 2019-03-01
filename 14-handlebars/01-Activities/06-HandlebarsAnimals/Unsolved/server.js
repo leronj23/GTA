@@ -34,49 +34,29 @@ var animals = [
   }
 ];
 
-app.get("/dog", function (req, res) {
+app.get("/dog", function(req, res) {
   // Handlebars requires an object to be sent to the dog.handlebars file. Lucky for us, animals[0] is an object!
 
   // 1. Send the dog object from the animals array to the dog.handlebars file.
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i].animalType === "dog") {
-      return res.render("dog", animals[i]);
-    }
-  }
+
 });
 
-app.get("/all-pets", function (req, res) {
+app.get("/all-pets", function(req, res) {
   // Handlebars requires an object to be sent to the index.handlebars file.
 
-  var allpets = {
-    animals: []
-  }
   // 2. Send the animals to the index.handlebars file. Remember that animals is an array and not an object.
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i].pet) {
-      allpets.animals.push(animals[i])
-    }
-  }
-  console.log(allpets)
-  return res.render("index", allpets);
+
 });
 
-app.get("/all-non-pets", function (req, res) {
+app.get("/all-non-pets", function(req, res) {
   // Handlebars requires an object to be sent to the index.handlebars file.
-  var nonpets = {
-    animals: []
-  }
+
   // 3. Send all the animals that are not pets to the index.handlebars file.
-  for (var i = 0; i < animals.length; i++) {
-    if (!animals[i].pet) {
-      nonpets.animals.push(animals[i])
-    }
-  }
-  return res.render("index", nonpets);
+
 });
 
 // Start our server so that it can begin listening to client requests.
-app.listen(PORT, function () {
+app.listen(PORT, function() {
   // Log (server-side) when our server has started
   console.log("Server listening on: http://localhost:" + PORT);
 });

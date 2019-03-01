@@ -60,36 +60,19 @@
         </div>
 
         <script type="text/javascript">
-          $(document).ready(function () {
+          $(document).ready(function() {
 
             // Here we create the on click event that gets the user's pick
-            $(".btn-choice").on("click", function () {
+            $(".btn-choice").on("click", function() {
 
-              var buttonChosed = $(this).val();
-              var computerChosen = randomIntFromInterval(1, 4);
+              console.log("You clicked a button!!");
 
-              $("#computer-pick").html(computerChosen);
+              // Add code to have the computer guess a random number between 1 and 4
+              // Then determine which button was clicked
+              // Compare the computer and user guess
+              // Inform the user if the've guessed correctly or incorrectly
 
-              if(buttonChosed == computerChosen){
-
-                $("#result").html("You're Correct!!");
-              }
-              else{
-
-                $("#result").html("You're Wrong!!");
-              }
             });
-
-            function randomIntFromInterval(min, max) // min and max included
-            {
-              return Math.floor(Math.random() * (max - min + 1) + min);
-            }
-
-            // Add code to have the computer guess a random number between 1 and 4
-            // Then determine which button was clicked
-            // Compare the computer and user guess
-            // Inform the user if the've guessed correctly or incorrectly
-
           });
 
         </script>

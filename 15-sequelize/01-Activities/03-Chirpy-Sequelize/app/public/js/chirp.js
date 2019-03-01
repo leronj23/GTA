@@ -34,14 +34,8 @@ $("#chirp-submit").on("click", function(event) {
   $("#chirp-box").val("");
 });
 
-$.get("/", function(data) {
-  console.log('******************')
-});
-
 // When the page loads, grab all of our chirps
 $.get("/api/all", function(data) {
-
-  console.log('&&&&&&&&&&&&&&')
 
   if (data.length !== 0) {
 
@@ -55,6 +49,9 @@ $.get("/api/all", function(data) {
       row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
 
       $("#chirp-area").prepend(row);
+
     }
+
   }
+
 });

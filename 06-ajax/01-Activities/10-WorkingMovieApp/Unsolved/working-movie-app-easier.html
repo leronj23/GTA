@@ -31,11 +31,7 @@
     </form>
 
     <!-- Movies will get dumped Here -->
-    <div id="the-movie"></div>
-    <div id="rating-data"></div>
-    <div id="release-year"></div>
-    <div id="plot"></div>
-    <div id="movie-image"></div>
+    <div id="movies-view"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
@@ -54,26 +50,19 @@
           method: "GET"
         }).then(function(response) {
 
-          console.log(response);
-
           // Creates a div to hold the movie
-          $("#the-movie").text(response.Title);
           // Retrieves the Rating Data
           // Creates an element to have the rating displayed
           // Displays the rating
-          $("#rating-data").text(response.Ratings[0].Source);
           // Retrieves the release year
           // Creates an element to hold the release year
           // Displays the release year
-          $("#release-year").text(response.Year);
           // Retrieves the plot
           // Creates an element to hold the plot
           // Appends the plot
-          $("#plot").text(response.Plot);
           // Creates an element to hold the image
           // Appends the image
           // Puts the entire Movie above the previous movies.
-          $("#movie-image").html("<img alt=Images src="+response.Poster+" />");          
         });
 
       }
@@ -84,7 +73,6 @@
         // Deletes the movies prior to adding new movies
         // (this is necessary otherwise you will have repeat buttons)
         $("#buttons-view").empty();
-        $("#movie-image img").remove();
         // Loops through the array of movies
         for (var i = 0; i < movies.length; i++) {
 

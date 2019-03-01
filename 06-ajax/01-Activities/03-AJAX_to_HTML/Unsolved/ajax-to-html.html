@@ -33,31 +33,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
     // The below code fills in the first row of the table
-    // var movie = "Mr. Nobody";
-    // var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+    var movie = "Mr. Nobody";
+    var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
 
-    var movie = {
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
 
-      title: ["Mr. Nobody", "Iron Man", "Hulk"]
-    }
-
-    for (var i = 0; i < movie.title.length; i++) {
-
-      var queryURL = "https://www.omdbapi.com/?t=" + movie.title[i] + "&y=&plot=short&apikey=trilogy"
-
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      }).then(function (response) {
-
-        var new_row = '<tr><td>' + response.Title + '</td><td>' + response.Year + '</td><td>' + response.Actors + '</td></tr>';
-        $("table tbody").append(new_row);
-
-        // Create and save references to 3 td elements containing the Title, Year, and Actors from the AJAX response object
-        // Append the td elements to the new table row
-        // Append the table row to the tbody element
-      });
-    }
+      // Create and save a reference to new empty table row
+      // Create and save references to 3 td elements containing the Title, Year, and Actors from the AJAX response object
+      // Append the td elements to the new table row
+      // Append the table row to the tbody element
+    });
 
     // Repeat the above logic to add rows for two more movies of your choice
 

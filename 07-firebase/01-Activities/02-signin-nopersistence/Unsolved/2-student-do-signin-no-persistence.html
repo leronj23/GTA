@@ -82,46 +82,19 @@
   <!-- Script -->
   <script>
     // ========================================= START CODING BELOW!!
-    
+
     // Capture Button Click
-    $("#add-user").on("click", function (event) {
+    $("#add-user").on("click", function(event) {
       event.preventDefault();
 
       // Capture User Inputs and store them into variables
-      var nameInput = $("#name-input").val().trim();
-      var emailInput = $("#email-input").val().trim();
-      var ageInput = $("#age-input").val().trim();
-      var commentInput = $("#comment-input").val().trim();
 
-      $("#name-display").text(nameInput);
-      $("#email-display").text(emailInput);
-      $("#age-display").text(ageInput);
-      $("#comment-display").text(commentInput);
-
-
-
-
-      localStorage.clear();
-      localStorage.setItem("name", nameInput);
-      localStorage.setItem("email", emailInput);
-      localStorage.setItem("age", ageInput);
-      localStorage.setItem("comment", commentInput);
-
-      var array = [inputForm.nameInput, inputForm.emailInput, inputForm.ageInput, inputForm.commentInput];
 
       // Console log each of the user inputs to confirm we are receiving them correctly
-      array.forEach(element => {
-        console.log(element);
-      });
+
 
       // Output all of the new information into the relevant HTML sections
     });
-
-    // Display previous stored text
-    $("#name-display").text(localStorage.getItem("name"));
-    $("#email-display").text(localStorage.getItem("email"));
-    $("#age-display").text(localStorage.getItem("age"));
-    $("#comment-display").text(localStorage.getItem("comment"));
 
   </script>
 
